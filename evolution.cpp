@@ -25,6 +25,20 @@ Grille::Grille(int l, int h, int p){
 
 }
 
+int calculerVivants(Grille grille){
+    int cpt = 0;
+
+    for (int i = 0; i < grille.hauteur;i++){
+        for (int j = 0; j < grille.largeur; j++){
+            if (grille.g[i][j]){
+                cpt = cpt + 1;
+            }
+        }
+    }
+
+
+    return cpt;
+}
 
 Grille::Grille(){
 
@@ -233,14 +247,6 @@ void Grille::tour(){
     }
     generation = generation + 1;
 
-    int cpt = 0;
-    for (int i = 0; i < hauteur; i++){
-        for (int j = 0; j < largeur; j++){
-            if (g[i][j] == 1){
-                cpt = cpt + 1;
-            }
-        }
-    }
-    cellulesVivantes = cpt;
+    cellulesVivantes = calculerVivants(*this);
 
 }

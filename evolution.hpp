@@ -46,6 +46,8 @@ ostream& operator<<(ostream& out,Grille grille);
 vector<vector<bool>> createGrille(int l, int h, int p);
 Grille lireGrilleDepuisFichier(const std::string& nomFichier);
 
+int calculerVivants(Grille grille);
+
 //renvoie toutes les positions des voisins 
 //d'une cellulle, on fait comme si la position
 //de la cellule en question est valable

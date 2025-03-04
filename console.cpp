@@ -36,12 +36,12 @@ int main(int argc, char* argv[]){
 
 
     do{
-        if (grille.cellulesVivantes > 0){
+        if (calculerVivants(grille) > 0){
             std::cout << "Turn : " << grille.generation <<endl;
-            std::cout << "Alives cells : "<<grille.cellulesVivantes<<endl;
+            std::cout << "Alives cells : "<< calculerVivants(grille)<<endl;
             s = getchar();
             grille.tour();
-            std::cout << grille <<endl;
+            std::cout << grille << endl;
     
         }else{
             
@@ -49,7 +49,7 @@ int main(int argc, char* argv[]){
        
     }while (s == "\n" and grille.cellulesVivantes != 0);
 
-    if (grille.cellulesVivantes == 0){
+    if (calculerVivants(grille) == 0){
         cout << "Simulation ended. All cells died after "<< grille.generation << " generations "<<endl;
     }else{
         std::cout << grille;
